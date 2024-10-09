@@ -143,7 +143,7 @@ def write_files(processed_feedback: List[List[str]]):
 # If u_mass as coherence metric, corpus should be provided: https://radimrehurek.com/gensim/models/coherencemodel.html
 # u_mass better than c_v: https://www.baeldung.com/cs/topic-modeling-coherence-score
 async def compute_coherence(lda_model, texts, dictionary):
-    coherence_model = CoherenceModel(model=lda_model, texts=texts, dictionary=dictionary, coherence='u_mass')
+    coherence_model = CoherenceModel(model=lda_model, texts=texts, dictionary=dictionary, coherence='c_v')
     return coherence_model.get_coherence()
     
 # Text Preprocessing Function (For German)
